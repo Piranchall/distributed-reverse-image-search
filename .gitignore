@@ -1,0 +1,20 @@
+*.npy
+*.bin
+*.jpg
+*.jpeg
+*.png
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+venv/
+env/
+*.csv
+
+# Keep test features
+!test_cnn.h5
+!test_hashes.pkl
+!test_sift.pkl
+!test_orb.pkl
+!test_hist.pkl
+!test_image_paths.pkl
+!ground_truth.json
