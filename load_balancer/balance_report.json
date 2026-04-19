@@ -1,0 +1,1331 @@
+{
+  "generated_at": "2026-04-19T12:07:06Z",
+  "hotspot_multiplier": 3.0,
+  "total_hotspots": 1608,
+  "aggregate": {
+    "total_buckets": 40960,
+    "total_ids": 10000000,
+    "global_min": 4.0,
+    "global_max": 6602.0,
+    "global_mean": 244.140625,
+    "global_std": 236.6299047381929,
+    "global_p95": 666.0,
+    "global_p99": 1156.2299999999886,
+    "imbalance_ratio": 27.04
+  },
+  "tables": [
+    {
+      "table_index": 0,
+      "num_buckets": 4096,
+      "total_ids": 1000000,
+      "min": 7.0,
+      "max": 2109.0,
+      "mean": 244.14,
+      "median": 170.0,
+      "std": 239.63,
+      "p95": 695.25,
+      "p99": 1253.25,
+      "imbalance_ratio": 8.64,
+      "histogram": {
+        "1\u201310": 1,
+        "11\u201350": 290,
+        "51\u2013100": 779,
+        "101\u2013250": 1645,
+        "251\u2013500": 916,
+        "501\u20131000": 359,
+        "1000+": 67
+      },
+      "hotspot_count": 183,
+      "coldspot_count": 1,
+      "hotspots": [
+        {
+          "bucket_key": "010111110100",
+          "size": 2109,
+          "ratio": 8.64
+        },
+        {
+          "bucket_key": "011000000110",
+          "size": 2090,
+          "ratio": 8.56
+        },
+        {
+          "bucket_key": "000011100001",
+          "size": 2080,
+          "ratio": 8.52
+        },
+        {
+          "bucket_key": "100010000111",
+          "size": 2069,
+          "ratio": 8.47
+        },
+        {
+          "bucket_key": "110111110100",
+          "size": 1937,
+          "ratio": 7.93
+        },
+        {
+          "bucket_key": "100011100001",
+          "size": 1919,
+          "ratio": 7.86
+        },
+        {
+          "bucket_key": "111000000110",
+          "size": 1836,
+          "ratio": 7.52
+        },
+        {
+          "bucket_key": "101011100001",
+          "size": 1809,
+          "ratio": 7.41
+        },
+        {
+          "bucket_key": "101000000111",
+          "size": 1779,
+          "ratio": 7.29
+        },
+        {
+          "bucket_key": "000111111101",
+          "size": 1740,
+          "ratio": 7.13
+        },
+        {
+          "bucket_key": "000101101101",
+          "size": 1687,
+          "ratio": 6.91
+        },
+        {
+          "bucket_key": "011100011110",
+          "size": 1677,
+          "ratio": 6.87
+        },
+        {
+          "bucket_key": "100000000111",
+          "size": 1670,
+          "ratio": 6.84
+        },
+        {
+          "bucket_key": "110111110000",
+          "size": 1667,
+          "ratio": 6.83
+        },
+        {
+          "bucket_key": "111000000011",
+          "size": 1655,
+          "ratio": 6.78
+        },
+        {
+          "bucket_key": "111000000111",
+          "size": 1655,
+          "ratio": 6.78
+        },
+        {
+          "bucket_key": "000011101001",
+          "size": 1628,
+          "ratio": 6.67
+        },
+        {
+          "bucket_key": "100010000011",
+          "size": 1605,
+          "ratio": 6.57
+        },
+        {
+          "bucket_key": "101000000011",
+          "size": 1588,
+          "ratio": 6.5
+        },
+        {
+          "bucket_key": "010111111100",
+          "size": 1553,
+          "ratio": 6.36
+        }
+      ],
+      "coldspot_keys": [
+        "011110100001"
+      ],
+      "estimated_avg_query_rerank_ms": 73.24,
+      "estimated_hot_query_rerank_ms": 632.7
+    },
+    {
+      "table_index": 1,
+      "num_buckets": 4096,
+      "total_ids": 1000000,
+      "min": 10.0,
+      "max": 3256.0,
+      "mean": 244.14,
+      "median": 169.0,
+      "std": 255.22,
+      "p95": 694.25,
+      "p99": 1271.15,
+      "imbalance_ratio": 13.34,
+      "histogram": {
+        "1\u201310": 0,
+        "11\u201350": 311,
+        "51\u2013100": 756,
+        "101\u2013250": 1693,
+        "251\u2013500": 866,
+        "501\u20131000": 347,
+        "1000+": 75
+      },
+      "hotspot_count": 176,
+      "coldspot_count": 0,
+      "hotspots": [
+        {
+          "bucket_key": "010011101001",
+          "size": 3256,
+          "ratio": 13.34
+        },
+        {
+          "bucket_key": "111001101101",
+          "size": 3223,
+          "ratio": 13.2
+        },
+        {
+          "bucket_key": "000101011011",
+          "size": 3212,
+          "ratio": 13.16
+        },
+        {
+          "bucket_key": "111001101100",
+          "size": 2321,
+          "ratio": 9.51
+        },
+        {
+          "bucket_key": "000101010011",
+          "size": 2158,
+          "ratio": 8.84
+        },
+        {
+          "bucket_key": "000101001011",
+          "size": 2142,
+          "ratio": 8.77
+        },
+        {
+          "bucket_key": "000011101011",
+          "size": 2102,
+          "ratio": 8.61
+        },
+        {
+          "bucket_key": "111001001101",
+          "size": 2099,
+          "ratio": 8.6
+        },
+        {
+          "bucket_key": "110011101011",
+          "size": 2041,
+          "ratio": 8.36
+        },
+        {
+          "bucket_key": "010011111011",
+          "size": 2017,
+          "ratio": 8.26
+        },
+        {
+          "bucket_key": "010011101011",
+          "size": 1972,
+          "ratio": 8.08
+        },
+        {
+          "bucket_key": "111000101100",
+          "size": 1968,
+          "ratio": 8.06
+        },
+        {
+          "bucket_key": "110011101101",
+          "size": 1879,
+          "ratio": 7.7
+        },
+        {
+          "bucket_key": "000101011010",
+          "size": 1873,
+          "ratio": 7.67
+        },
+        {
+          "bucket_key": "000101001010",
+          "size": 1837,
+          "ratio": 7.52
+        },
+        {
+          "bucket_key": "000100010011",
+          "size": 1828,
+          "ratio": 7.49
+        },
+        {
+          "bucket_key": "110011101001",
+          "size": 1790,
+          "ratio": 7.33
+        },
+        {
+          "bucket_key": "111101101101",
+          "size": 1772,
+          "ratio": 7.26
+        },
+        {
+          "bucket_key": "111001101001",
+          "size": 1747,
+          "ratio": 7.16
+        },
+        {
+          "bucket_key": "000001101011",
+          "size": 1738,
+          "ratio": 7.12
+        }
+      ],
+      "coldspot_keys": [],
+      "estimated_avg_query_rerank_ms": 73.24,
+      "estimated_hot_query_rerank_ms": 976.8
+    },
+    {
+      "table_index": 2,
+      "num_buckets": 4096,
+      "total_ids": 1000000,
+      "min": 13.0,
+      "max": 2387.0,
+      "mean": 244.14,
+      "median": 194.0,
+      "std": 184.49,
+      "p95": 593.25,
+      "p99": 925.0,
+      "imbalance_ratio": 9.78,
+      "histogram": {
+        "1\u201310": 0,
+        "11\u201350": 104,
+        "51\u2013100": 528,
+        "101\u2013250": 2002,
+        "251\u2013500": 1076,
+        "501\u20131000": 325,
+        "1000+": 29
+      },
+      "hotspot_count": 101,
+      "coldspot_count": 0,
+      "hotspots": [
+        {
+          "bucket_key": "010010001001",
+          "size": 2387,
+          "ratio": 9.78
+        },
+        {
+          "bucket_key": "011111111010",
+          "size": 1761,
+          "ratio": 7.21
+        },
+        {
+          "bucket_key": "000111001001",
+          "size": 1732,
+          "ratio": 7.09
+        },
+        {
+          "bucket_key": "010011001001",
+          "size": 1643,
+          "ratio": 6.73
+        },
+        {
+          "bucket_key": "110010101100",
+          "size": 1546,
+          "ratio": 6.33
+        },
+        {
+          "bucket_key": "011111011010",
+          "size": 1517,
+          "ratio": 6.21
+        },
+        {
+          "bucket_key": "111011011100",
+          "size": 1493,
+          "ratio": 6.12
+        },
+        {
+          "bucket_key": "111011001100",
+          "size": 1434,
+          "ratio": 5.87
+        },
+        {
+          "bucket_key": "111100100001",
+          "size": 1405,
+          "ratio": 5.75
+        },
+        {
+          "bucket_key": "010000001001",
+          "size": 1339,
+          "ratio": 5.48
+        },
+        {
+          "bucket_key": "000111001000",
+          "size": 1225,
+          "ratio": 5.02
+        },
+        {
+          "bucket_key": "000100110111",
+          "size": 1221,
+          "ratio": 5.0
+        },
+        {
+          "bucket_key": "010010101001",
+          "size": 1211,
+          "ratio": 4.96
+        },
+        {
+          "bucket_key": "110011101100",
+          "size": 1183,
+          "ratio": 4.85
+        },
+        {
+          "bucket_key": "000110001001",
+          "size": 1166,
+          "ratio": 4.78
+        },
+        {
+          "bucket_key": "111000101001",
+          "size": 1164,
+          "ratio": 4.77
+        },
+        {
+          "bucket_key": "110011001100",
+          "size": 1158,
+          "ratio": 4.74
+        },
+        {
+          "bucket_key": "111011101100",
+          "size": 1154,
+          "ratio": 4.73
+        },
+        {
+          "bucket_key": "111010101100",
+          "size": 1150,
+          "ratio": 4.71
+        },
+        {
+          "bucket_key": "000100010111",
+          "size": 1099,
+          "ratio": 4.5
+        }
+      ],
+      "coldspot_keys": [],
+      "estimated_avg_query_rerank_ms": 73.24,
+      "estimated_hot_query_rerank_ms": 716.1
+    },
+    {
+      "table_index": 3,
+      "num_buckets": 4096,
+      "total_ids": 1000000,
+      "min": 4.0,
+      "max": 3191.0,
+      "mean": 244.14,
+      "median": 168.0,
+      "std": 256.93,
+      "p95": 719.0,
+      "p99": 1218.4,
+      "imbalance_ratio": 13.07,
+      "histogram": {
+        "1\u201310": 8,
+        "11\u201350": 387,
+        "51\u2013100": 793,
+        "101\u2013250": 1529,
+        "251\u2013500": 892,
+        "501\u20131000": 351,
+        "1000+": 87
+      },
+      "hotspot_count": 197,
+      "coldspot_count": 8,
+      "hotspots": [
+        {
+          "bucket_key": "010001100111",
+          "size": 3191,
+          "ratio": 13.07
+        },
+        {
+          "bucket_key": "000000010101",
+          "size": 3132,
+          "ratio": 12.83
+        },
+        {
+          "bucket_key": "100000010101",
+          "size": 2835,
+          "ratio": 11.61
+        },
+        {
+          "bucket_key": "111001100111",
+          "size": 2593,
+          "ratio": 10.62
+        },
+        {
+          "bucket_key": "000101100111",
+          "size": 2370,
+          "ratio": 9.71
+        },
+        {
+          "bucket_key": "101101100111",
+          "size": 2272,
+          "ratio": 9.31
+        },
+        {
+          "bucket_key": "000001100111",
+          "size": 2151,
+          "ratio": 8.81
+        },
+        {
+          "bucket_key": "101011100111",
+          "size": 2135,
+          "ratio": 8.74
+        },
+        {
+          "bucket_key": "100010010101",
+          "size": 2111,
+          "ratio": 8.65
+        },
+        {
+          "bucket_key": "100110010111",
+          "size": 1913,
+          "ratio": 7.84
+        },
+        {
+          "bucket_key": "100110010101",
+          "size": 1816,
+          "ratio": 7.44
+        },
+        {
+          "bucket_key": "111100001010",
+          "size": 1719,
+          "ratio": 7.04
+        },
+        {
+          "bucket_key": "100111010111",
+          "size": 1686,
+          "ratio": 6.91
+        },
+        {
+          "bucket_key": "110000100101",
+          "size": 1684,
+          "ratio": 6.9
+        },
+        {
+          "bucket_key": "010000100111",
+          "size": 1650,
+          "ratio": 6.76
+        },
+        {
+          "bucket_key": "001101100111",
+          "size": 1647,
+          "ratio": 6.75
+        },
+        {
+          "bucket_key": "101000010101",
+          "size": 1639,
+          "ratio": 6.71
+        },
+        {
+          "bucket_key": "101111100111",
+          "size": 1626,
+          "ratio": 6.66
+        },
+        {
+          "bucket_key": "001011011011",
+          "size": 1607,
+          "ratio": 6.58
+        },
+        {
+          "bucket_key": "000010010101",
+          "size": 1508,
+          "ratio": 6.18
+        }
+      ],
+      "coldspot_keys": [
+        "001100011111",
+        "001100111111",
+        "001100001111",
+        "110001111011",
+        "100001111111",
+        "100001111011",
+        "011110000100",
+        "001100000101"
+      ],
+      "estimated_avg_query_rerank_ms": 73.24,
+      "estimated_hot_query_rerank_ms": 957.3
+    },
+    {
+      "table_index": 4,
+      "num_buckets": 4096,
+      "total_ids": 1000000,
+      "min": 4.0,
+      "max": 6602.0,
+      "mean": 244.14,
+      "median": 156.0,
+      "std": 305.96,
+      "p95": 730.5,
+      "p99": 1423.2,
+      "imbalance_ratio": 27.04,
+      "histogram": {
+        "1\u201310": 6,
+        "11\u201350": 424,
+        "51\u2013100": 827,
+        "101\u2013250": 1558,
+        "251\u2013500": 826,
+        "501\u20131000": 310,
+        "1000+": 101
+      },
+      "hotspot_count": 204,
+      "coldspot_count": 6,
+      "hotspots": [
+        {
+          "bucket_key": "010010111001",
+          "size": 6602,
+          "ratio": 27.04
+        },
+        {
+          "bucket_key": "010000111001",
+          "size": 3887,
+          "ratio": 15.92
+        },
+        {
+          "bucket_key": "101111000111",
+          "size": 3719,
+          "ratio": 15.23
+        },
+        {
+          "bucket_key": "001110000111",
+          "size": 3532,
+          "ratio": 14.47
+        },
+        {
+          "bucket_key": "101110000111",
+          "size": 3521,
+          "ratio": 14.42
+        },
+        {
+          "bucket_key": "000110000111",
+          "size": 2946,
+          "ratio": 12.07
+        },
+        {
+          "bucket_key": "110010111001",
+          "size": 2877,
+          "ratio": 11.78
+        },
+        {
+          "bucket_key": "000011101010",
+          "size": 2514,
+          "ratio": 10.3
+        },
+        {
+          "bucket_key": "010010111101",
+          "size": 2426,
+          "ratio": 9.94
+        },
+        {
+          "bucket_key": "010010111000",
+          "size": 2398,
+          "ratio": 9.82
+        },
+        {
+          "bucket_key": "010000111101",
+          "size": 2345,
+          "ratio": 9.61
+        },
+        {
+          "bucket_key": "101111010010",
+          "size": 2234,
+          "ratio": 9.15
+        },
+        {
+          "bucket_key": "101110010010",
+          "size": 2200,
+          "ratio": 9.01
+        },
+        {
+          "bucket_key": "101111000011",
+          "size": 2188,
+          "ratio": 8.96
+        },
+        {
+          "bucket_key": "001110000110",
+          "size": 2163,
+          "ratio": 8.86
+        },
+        {
+          "bucket_key": "100111000111",
+          "size": 2161,
+          "ratio": 8.85
+        },
+        {
+          "bucket_key": "101110000110",
+          "size": 1980,
+          "ratio": 8.11
+        },
+        {
+          "bucket_key": "011110000111",
+          "size": 1958,
+          "ratio": 8.02
+        },
+        {
+          "bucket_key": "110000111001",
+          "size": 1923,
+          "ratio": 7.88
+        },
+        {
+          "bucket_key": "010000111000",
+          "size": 1910,
+          "ratio": 7.82
+        }
+      ],
+      "coldspot_keys": [
+        "100110111111",
+        "100010110110",
+        "100110111100",
+        "100000111110",
+        "100110111110",
+        "110100111110"
+      ],
+      "estimated_avg_query_rerank_ms": 73.24,
+      "estimated_hot_query_rerank_ms": 1980.6
+    },
+    {
+      "table_index": 5,
+      "num_buckets": 4096,
+      "total_ids": 1000000,
+      "min": 15.0,
+      "max": 2359.0,
+      "mean": 244.14,
+      "median": 191.0,
+      "std": 193.99,
+      "p95": 611.25,
+      "p99": 923.75,
+      "imbalance_ratio": 9.66,
+      "histogram": {
+        "1\u201310": 0,
+        "11\u201350": 180,
+        "51\u2013100": 645,
+        "101\u2013250": 1752,
+        "251\u2013500": 1111,
+        "501\u20131000": 336,
+        "1000+": 26
+      },
+      "hotspot_count": 113,
+      "coldspot_count": 0,
+      "hotspots": [
+        {
+          "bucket_key": "110111000000",
+          "size": 2359,
+          "ratio": 9.66
+        },
+        {
+          "bucket_key": "011001110100",
+          "size": 1897,
+          "ratio": 7.77
+        },
+        {
+          "bucket_key": "011001111100",
+          "size": 1754,
+          "ratio": 7.18
+        },
+        {
+          "bucket_key": "110001001101",
+          "size": 1727,
+          "ratio": 7.07
+        },
+        {
+          "bucket_key": "110011000100",
+          "size": 1587,
+          "ratio": 6.5
+        },
+        {
+          "bucket_key": "110111000100",
+          "size": 1577,
+          "ratio": 6.46
+        },
+        {
+          "bucket_key": "011001110110",
+          "size": 1530,
+          "ratio": 6.27
+        },
+        {
+          "bucket_key": "000101000000",
+          "size": 1528,
+          "ratio": 6.26
+        },
+        {
+          "bucket_key": "110011001101",
+          "size": 1521,
+          "ratio": 6.23
+        },
+        {
+          "bucket_key": "000111000000",
+          "size": 1327,
+          "ratio": 5.44
+        },
+        {
+          "bucket_key": "010101000000",
+          "size": 1326,
+          "ratio": 5.43
+        },
+        {
+          "bucket_key": "110011000110",
+          "size": 1316,
+          "ratio": 5.39
+        },
+        {
+          "bucket_key": "110011000000",
+          "size": 1228,
+          "ratio": 5.03
+        },
+        {
+          "bucket_key": "100111000000",
+          "size": 1195,
+          "ratio": 4.89
+        },
+        {
+          "bucket_key": "001001110100",
+          "size": 1171,
+          "ratio": 4.8
+        },
+        {
+          "bucket_key": "000001011001",
+          "size": 1166,
+          "ratio": 4.78
+        },
+        {
+          "bucket_key": "110010110110",
+          "size": 1130,
+          "ratio": 4.63
+        },
+        {
+          "bucket_key": "010111000000",
+          "size": 1096,
+          "ratio": 4.49
+        },
+        {
+          "bucket_key": "011001111110",
+          "size": 1093,
+          "ratio": 4.48
+        },
+        {
+          "bucket_key": "100011001101",
+          "size": 1079,
+          "ratio": 4.42
+        }
+      ],
+      "coldspot_keys": [],
+      "estimated_avg_query_rerank_ms": 73.24,
+      "estimated_hot_query_rerank_ms": 707.7
+    },
+    {
+      "table_index": 6,
+      "num_buckets": 4096,
+      "total_ids": 1000000,
+      "min": 11.0,
+      "max": 3225.0,
+      "mean": 244.14,
+      "median": 173.0,
+      "std": 238.38,
+      "p95": 668.25,
+      "p99": 1167.9,
+      "imbalance_ratio": 13.21,
+      "histogram": {
+        "1\u201310": 0,
+        "11\u201350": 233,
+        "51\u2013100": 774,
+        "101\u2013250": 1699,
+        "251\u2013500": 919,
+        "501\u20131000": 354,
+        "1000+": 68
+      },
+      "hotspot_count": 164,
+      "coldspot_count": 0,
+      "hotspots": [
+        {
+          "bucket_key": "000110100111",
+          "size": 3225,
+          "ratio": 13.21
+        },
+        {
+          "bucket_key": "101111100001",
+          "size": 2777,
+          "ratio": 11.37
+        },
+        {
+          "bucket_key": "000000000100",
+          "size": 2587,
+          "ratio": 10.6
+        },
+        {
+          "bucket_key": "101011100001",
+          "size": 2496,
+          "ratio": 10.22
+        },
+        {
+          "bucket_key": "101111000001",
+          "size": 2113,
+          "ratio": 8.65
+        },
+        {
+          "bucket_key": "010000000100",
+          "size": 2060,
+          "ratio": 8.44
+        },
+        {
+          "bucket_key": "011000000100",
+          "size": 2041,
+          "ratio": 8.36
+        },
+        {
+          "bucket_key": "001110100111",
+          "size": 1937,
+          "ratio": 7.93
+        },
+        {
+          "bucket_key": "100010100001",
+          "size": 1783,
+          "ratio": 7.3
+        },
+        {
+          "bucket_key": "000100100111",
+          "size": 1755,
+          "ratio": 7.19
+        },
+        {
+          "bucket_key": "111111001001",
+          "size": 1715,
+          "ratio": 7.02
+        },
+        {
+          "bucket_key": "101110100001",
+          "size": 1706,
+          "ratio": 6.99
+        },
+        {
+          "bucket_key": "101010100001",
+          "size": 1662,
+          "ratio": 6.81
+        },
+        {
+          "bucket_key": "001000000100",
+          "size": 1654,
+          "ratio": 6.77
+        },
+        {
+          "bucket_key": "000000001100",
+          "size": 1585,
+          "ratio": 6.49
+        },
+        {
+          "bucket_key": "011001011000",
+          "size": 1567,
+          "ratio": 6.42
+        },
+        {
+          "bucket_key": "100011100001",
+          "size": 1522,
+          "ratio": 6.23
+        },
+        {
+          "bucket_key": "100110100001",
+          "size": 1500,
+          "ratio": 6.14
+        },
+        {
+          "bucket_key": "000110100110",
+          "size": 1486,
+          "ratio": 6.09
+        },
+        {
+          "bucket_key": "011001011100",
+          "size": 1477,
+          "ratio": 6.05
+        }
+      ],
+      "coldspot_keys": [],
+      "estimated_avg_query_rerank_ms": 73.24,
+      "estimated_hot_query_rerank_ms": 967.5
+    },
+    {
+      "table_index": 7,
+      "num_buckets": 4096,
+      "total_ids": 1000000,
+      "min": 14.0,
+      "max": 3025.0,
+      "mean": 244.14,
+      "median": 179.0,
+      "std": 225.14,
+      "p95": 646.5,
+      "p99": 1112.1,
+      "imbalance_ratio": 12.39,
+      "histogram": {
+        "1\u201310": 0,
+        "11\u201350": 213,
+        "51\u2013100": 724,
+        "101\u2013250": 1732,
+        "251\u2013500": 980,
+        "501\u20131000": 340,
+        "1000+": 58
+      },
+      "hotspot_count": 155,
+      "coldspot_count": 0,
+      "hotspots": [
+        {
+          "bucket_key": "011110010111",
+          "size": 3025,
+          "ratio": 12.39
+        },
+        {
+          "bucket_key": "010010001110",
+          "size": 2635,
+          "ratio": 10.79
+        },
+        {
+          "bucket_key": "011100010111",
+          "size": 1997,
+          "ratio": 8.18
+        },
+        {
+          "bucket_key": "010000001110",
+          "size": 1953,
+          "ratio": 8.0
+        },
+        {
+          "bucket_key": "010011001110",
+          "size": 1951,
+          "ratio": 7.99
+        },
+        {
+          "bucket_key": "101101101000",
+          "size": 1845,
+          "ratio": 7.56
+        },
+        {
+          "bucket_key": "010010001010",
+          "size": 1825,
+          "ratio": 7.48
+        },
+        {
+          "bucket_key": "010000001010",
+          "size": 1813,
+          "ratio": 7.43
+        },
+        {
+          "bucket_key": "110011000110",
+          "size": 1805,
+          "ratio": 7.39
+        },
+        {
+          "bucket_key": "101111111101",
+          "size": 1731,
+          "ratio": 7.09
+        },
+        {
+          "bucket_key": "010010000110",
+          "size": 1716,
+          "ratio": 7.03
+        },
+        {
+          "bucket_key": "110011000111",
+          "size": 1701,
+          "ratio": 6.97
+        },
+        {
+          "bucket_key": "101101111010",
+          "size": 1671,
+          "ratio": 6.84
+        },
+        {
+          "bucket_key": "011110010011",
+          "size": 1598,
+          "ratio": 6.55
+        },
+        {
+          "bucket_key": "100010010111",
+          "size": 1576,
+          "ratio": 6.46
+        },
+        {
+          "bucket_key": "000000001000",
+          "size": 1475,
+          "ratio": 6.04
+        },
+        {
+          "bucket_key": "100101111010",
+          "size": 1466,
+          "ratio": 6.0
+        },
+        {
+          "bucket_key": "111111111101",
+          "size": 1463,
+          "ratio": 5.99
+        },
+        {
+          "bucket_key": "100001011010",
+          "size": 1455,
+          "ratio": 5.96
+        },
+        {
+          "bucket_key": "011010010111",
+          "size": 1443,
+          "ratio": 5.91
+        }
+      ],
+      "coldspot_keys": [],
+      "estimated_avg_query_rerank_ms": 73.24,
+      "estimated_hot_query_rerank_ms": 907.5
+    },
+    {
+      "table_index": 8,
+      "num_buckets": 4096,
+      "total_ids": 1000000,
+      "min": 8.0,
+      "max": 2865.0,
+      "mean": 244.14,
+      "median": 173.5,
+      "std": 235.2,
+      "p95": 696.25,
+      "p99": 1154.1,
+      "imbalance_ratio": 11.74,
+      "histogram": {
+        "1\u201310": 4,
+        "11\u201350": 328,
+        "51\u2013100": 735,
+        "101\u2013250": 1614,
+        "251\u2013500": 966,
+        "501\u20131000": 340,
+        "1000+": 71
+      },
+      "hotspot_count": 175,
+      "coldspot_count": 4,
+      "hotspots": [
+        {
+          "bucket_key": "011111010111",
+          "size": 2865,
+          "ratio": 11.74
+        },
+        {
+          "bucket_key": "011111110110",
+          "size": 2230,
+          "ratio": 9.13
+        },
+        {
+          "bucket_key": "011111010110",
+          "size": 2151,
+          "ratio": 8.81
+        },
+        {
+          "bucket_key": "111111000111",
+          "size": 1885,
+          "ratio": 7.72
+        },
+        {
+          "bucket_key": "111111100111",
+          "size": 1824,
+          "ratio": 7.47
+        },
+        {
+          "bucket_key": "011111100110",
+          "size": 1811,
+          "ratio": 7.42
+        },
+        {
+          "bucket_key": "100000100100",
+          "size": 1769,
+          "ratio": 7.25
+        },
+        {
+          "bucket_key": "111111100110",
+          "size": 1716,
+          "ratio": 7.03
+        },
+        {
+          "bucket_key": "110010100011",
+          "size": 1710,
+          "ratio": 7.0
+        },
+        {
+          "bucket_key": "100000100101",
+          "size": 1654,
+          "ratio": 6.77
+        },
+        {
+          "bucket_key": "101000100101",
+          "size": 1625,
+          "ratio": 6.66
+        },
+        {
+          "bucket_key": "101111100110",
+          "size": 1624,
+          "ratio": 6.65
+        },
+        {
+          "bucket_key": "111111000110",
+          "size": 1623,
+          "ratio": 6.65
+        },
+        {
+          "bucket_key": "000000011000",
+          "size": 1592,
+          "ratio": 6.52
+        },
+        {
+          "bucket_key": "010001011011",
+          "size": 1584,
+          "ratio": 6.49
+        },
+        {
+          "bucket_key": "011111000111",
+          "size": 1578,
+          "ratio": 6.46
+        },
+        {
+          "bucket_key": "101000101101",
+          "size": 1539,
+          "ratio": 6.3
+        },
+        {
+          "bucket_key": "010001111011",
+          "size": 1537,
+          "ratio": 6.3
+        },
+        {
+          "bucket_key": "000101011100",
+          "size": 1537,
+          "ratio": 6.3
+        },
+        {
+          "bucket_key": "011111001111",
+          "size": 1531,
+          "ratio": 6.27
+        }
+      ],
+      "coldspot_keys": [
+        "110111111101",
+        "100101110001",
+        "011010011110",
+        "110101100001"
+      ],
+      "estimated_avg_query_rerank_ms": 73.24,
+      "estimated_hot_query_rerank_ms": 859.5
+    },
+    {
+      "table_index": 9,
+      "num_buckets": 4096,
+      "total_ids": 1000000,
+      "min": 10.0,
+      "max": 2269.0,
+      "mean": 244.14,
+      "median": 186.0,
+      "std": 207.95,
+      "p95": 639.0,
+      "p99": 1037.45,
+      "imbalance_ratio": 9.29,
+      "histogram": {
+        "1\u201310": 0,
+        "11\u201350": 214,
+        "51\u2013100": 658,
+        "101\u2013250": 1769,
+        "251\u2013500": 1031,
+        "501\u20131000": 338,
+        "1000+": 49
+      },
+      "hotspot_count": 140,
+      "coldspot_count": 0,
+      "hotspots": [
+        {
+          "bucket_key": "100111011000",
+          "size": 2269,
+          "ratio": 9.29
+        },
+        {
+          "bucket_key": "011010111000",
+          "size": 1834,
+          "ratio": 7.51
+        },
+        {
+          "bucket_key": "100011011010",
+          "size": 1815,
+          "ratio": 7.43
+        },
+        {
+          "bucket_key": "001100001010",
+          "size": 1787,
+          "ratio": 7.32
+        },
+        {
+          "bucket_key": "100011011000",
+          "size": 1736,
+          "ratio": 7.11
+        },
+        {
+          "bucket_key": "010010110101",
+          "size": 1533,
+          "ratio": 6.28
+        },
+        {
+          "bucket_key": "011010111100",
+          "size": 1527,
+          "ratio": 6.25
+        },
+        {
+          "bucket_key": "011100001010",
+          "size": 1524,
+          "ratio": 6.24
+        },
+        {
+          "bucket_key": "100111011010",
+          "size": 1502,
+          "ratio": 6.15
+        },
+        {
+          "bucket_key": "001100001000",
+          "size": 1470,
+          "ratio": 6.02
+        },
+        {
+          "bucket_key": "001100000000",
+          "size": 1457,
+          "ratio": 5.97
+        },
+        {
+          "bucket_key": "011100000000",
+          "size": 1456,
+          "ratio": 5.96
+        },
+        {
+          "bucket_key": "100111011001",
+          "size": 1425,
+          "ratio": 5.84
+        },
+        {
+          "bucket_key": "011100000010",
+          "size": 1380,
+          "ratio": 5.65
+        },
+        {
+          "bucket_key": "100011011001",
+          "size": 1342,
+          "ratio": 5.5
+        },
+        {
+          "bucket_key": "101101101111",
+          "size": 1333,
+          "ratio": 5.46
+        },
+        {
+          "bucket_key": "100111001000",
+          "size": 1312,
+          "ratio": 5.37
+        },
+        {
+          "bucket_key": "010100100100",
+          "size": 1299,
+          "ratio": 5.32
+        },
+        {
+          "bucket_key": "100111011011",
+          "size": 1266,
+          "ratio": 5.19
+        },
+        {
+          "bucket_key": "100111010000",
+          "size": 1260,
+          "ratio": 5.16
+        }
+      ],
+      "coldspot_keys": [],
+      "estimated_avg_query_rerank_ms": 73.24,
+      "estimated_hot_query_rerank_ms": 680.7
+    }
+  ]
+}

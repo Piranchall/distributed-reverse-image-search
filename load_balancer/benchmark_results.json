@@ -1,0 +1,28 @@
+{
+  "method": "statistics_estimate",
+  "queries_run": 100,
+  "unbalanced": {
+    "condition": "unbalanced",
+    "mean_latency_ms": 83.2,
+    "p50_latency_ms": 63.1,
+    "p95_latency_ms": 209.8,
+    "p99_latency_ms": 356.9,
+    "mean_candidate_count": 1464,
+    "max_bucket_size": 6602,
+    "precision_at_10": 0.38,
+    "recall_at_10": 0.76,
+    "note": "Statistics-based estimate. Run with search_engine= for live measurements."
+  },
+  "balanced": {
+    "condition": "balanced",
+    "mean_latency_ms": 56.1,
+    "p50_latency_ms": 38.8,
+    "p95_latency_ms": 147.1,
+    "p99_latency_ms": 202.3,
+    "mean_candidate_count": 921,
+    "max_bucket_size": 732,
+    "precision_at_10": 0.38,
+    "recall_at_10": 0.76,
+    "note": "Latency improvements reflect reduced hotspot bucket sizes."
+  }
+}
