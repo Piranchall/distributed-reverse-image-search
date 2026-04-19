@@ -9,7 +9,8 @@ __pycache__/
 venv/
 env/
 *.csv
-
+lsh_index/hash_tables/
+**/__pycache__/
 # Keep test features
 !test_cnn.h5
 !test_hashes.pkl
