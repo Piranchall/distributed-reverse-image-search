@@ -1,0 +1,10 @@
+{
+  "num_tables": 10,
+  "hash_size": 12,
+  "embedding_dim": 128,
+  "random_seed": 42,
+  "top_k": 10,
+  "max_candidates": 5000,
+  "cache_max_size": 1000,
+  "cache_hamming_threshold": 8
+}
