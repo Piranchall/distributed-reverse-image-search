@@ -1,0 +1,81 @@
+{
+  "hardware": "Windows AMD64 \u00b7 12 cores",
+  "n_queries": 200,
+  "strong_scaling": {
+    "1": {
+      "num_queries": 200,
+      "num_workers": 1,
+      "mean_ms": 2.49,
+      "p50_ms": 2.0,
+      "p95_ms": 4.02,
+      "p99_ms": 8.61,
+      "min_ms": 0.99,
+      "max_ms": 20.37
+    },
+    "2": {
+      "num_queries": 200,
+      "num_workers": 2,
+      "mean_ms": 2.29,
+      "p50_ms": 2.0,
+      "p95_ms": 3.01,
+      "p99_ms": 4.0,
+      "min_ms": 0.99,
+      "max_ms": 5.01
+    },
+    "4": {
+      "num_queries": 200,
+      "num_workers": 4,
+      "mean_ms": 3.36,
+      "p50_ms": 3.0,
+      "p95_ms": 5.0,
+      "p99_ms": 8.44,
+      "min_ms": 1.0,
+      "max_ms": 13.58
+    },
+    "12": {
+      "num_queries": 200,
+      "num_workers": 12,
+      "mean_ms": 2.16,
+      "p50_ms": 2.0,
+      "p95_ms": 3.05,
+      "p99_ms": 3.54,
+      "min_ms": 0.89,
+      "max_ms": 4.03
+    }
+  },
+  "weak_scaling": {
+    "100K": {
+      "num_queries": 200,
+      "num_workers": 1,
+      "mean_ms": 0.58,
+      "p50_ms": 1.0,
+      "p95_ms": 1.01,
+      "p99_ms": 1.32,
+      "min_ms": 0.0,
+      "max_ms": 2.0,
+      "corpus_size": "100K"
+    },
+    "1M": {
+      "num_queries": 200,
+      "num_workers": 10,
+      "mean_ms": 1.83,
+      "p50_ms": 2.0,
+      "p95_ms": 2.88,
+      "p99_ms": 3.71,
+      "min_ms": 0.97,
+      "max_ms": 14.0,
+      "corpus_size": "1M"
+    },
+    "10M": {
+      "num_queries": 200,
+      "num_workers": 12,
+      "mean_ms": 7.15,
+      "p50_ms": 6.23,
+      "p95_ms": 12.0,
+      "p99_ms": 27.17,
+      "min_ms": 3.0,
+      "max_ms": 33.52,
+      "corpus_size": "10M"
+    }
+  }
+}
