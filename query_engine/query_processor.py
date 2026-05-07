@@ -95,6 +95,9 @@ class QueryProcessor:
 
         elapsed = time.time() - t0
         print(f"All tables loaded in {elapsed:.1f}s\n")
+        from incremental_update.concurrent_index import wrap_tables
+        self.hash_tables = wrap_tables(self.hash_tables)
+        print("Hash tables wrapped in ConcurrentHashTable (M3 Task 2).\n")
 
         # ── Build id → h5 row index mapping for prepare_query_embedding ──
         print("Building id→index mapping from HDF5 ...")
