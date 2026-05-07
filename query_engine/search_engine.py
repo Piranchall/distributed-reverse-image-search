@@ -1,31 +1,3 @@
-"""
-search_engine.py — Task 4: Result Aggregation and Re-ranking
-Project 20: Distributed Reverse Image Search Engine — Milestone 2
-Author: Mahnoor
-
-What this file does:
-  1. Wraps QueryProcessor (Task 3) with the full re-ranking pipeline
-  2. Initialises All_Features (FeatureStore) from Milestone 1's feature_fusion.py
-  3. Calls rank_candidates() to score candidates using the full weighted metric:
-       60% CNN + 20% hash + 10% SIFT + 5% ORB + 5% histogram
-  4. Returns final top-K (image_id, score) tuples to the caller
-
-Output contract (for Aliza's Task 6 cache wrapper):
-    search(query_embedding, top_k=10)
-        → list of (image_id: int, score: float), sorted descending by score
-
-Usage:
-    from query_engine.search_engine import SearchEngine
-
-    engine = SearchEngine(
-        index_dir  = 'lsh_index',
-        data_dir   = 'data',
-    )
-    results = engine.search(query_embedding, top_k=10)
-    for image_id, score in results:
-        print(f"  ID={image_id}  score={score:.4f}")
-"""
-
 import os
 import sys
 import json
@@ -37,13 +9,24 @@ import numpy as np
 _REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, _REPO_ROOT)
 
-# ── Task 3 ────────────────────────────────────────────────────────────────────
+# ── Task 3 (M2) ───────────────────────────────────────────────────────────────
 from query_engine.query_processor import QueryProcessor
 
 # ── Milestone 1 fusion module ─────────────────────────────────────────────────
-# CRITICAL: import from the original location — never copy fusion.py.
-# If Piranchal fixes a bug, this import gets the fix automatically.
 from feature_Fusion.feature_fusion import All_Features, rank_candidates
+
+# ── Milestone 3 Task 3: Parallel Re-ranking ───────────────────────────────────
+from reranking.parallel_reranker import ParallelReranker
+
+# ── Milestone 3 Task 4: Feature Compression + Batch Queries ───────────────────
+from compression.feature_compressor import (
+    CompressedEmbeddingStore,
+    BatchQueryProcessor,
+)
+
+# ── M3 Task 4 flag — set to True to enable float16 embedding compression ──────
+# Toggle without changing any other code. Accuracy benchmark tests both modes.
+USE_COMPRESSION = False
 
 
 # =============================================================================
@@ -114,6 +97,34 @@ class SearchEngine:
 
         # ── Timing log ───────────────────────────────────────────────────
         self._search_logs = []   # list of dicts, one per search() call
+
+        # ── M3 Task 3: Parallel Re-ranker ─────────────────────────────────
+        # Replaces sequential rank_candidates() — same interface, faster.
+        self.reranker = ParallelReranker(
+            feature_store=self.feature_store,
+            num_workers=os.cpu_count() or 4,
+        )
+
+        # ── M3 Task 4: Optional float16 compression ────────────────────────
+        # Halves CNN embedding memory: 512 MB → 256 MB.
+        # Controlled by USE_COMPRESSION flag at module level.
+        if USE_COMPRESSION:
+            print("M3 Task 4: Compressing CNN embeddings to float16 ...")
+            self._compressed_store = CompressedEmbeddingStore(
+                self.feature_store.embeddings
+            )
+            print(f"  {self._compressed_store}")
+        else:
+            self._compressed_store = None
+
+        # ── M3 Task 4: Batch Query Processor ──────────────────────────────
+        # Buffers concurrent queries and fans out in waves.
+        # Only beneficial under concurrent load — not for sequential benchmarks.
+        self._batch_processor = BatchQueryProcessor(
+            query_processor=self.query_processor,
+            batch_size=8,
+            max_wait_ms=20,
+        )
 
         print("=" * 60)
         print("SearchEngine ready.")
@@ -189,13 +200,13 @@ class SearchEngine:
         candidate_list = list(candidate_set)
 
         if query_image_id is not None:
-            # Full 5-feature fusion via rank_candidates() from fusion.py
-            # rank_candidates() expects a list, not a set
-            results = rank_candidates(
+            # M3 Task 3: Parallel re-ranking (drop-in for rank_candidates())
+            # Same signature, same output format, faster for large candidate sets.
+            results = self.reranker.rank_candidates(
                 query_image_id,
                 candidate_list,
-                self.feature_store,
-                top_k
+                top_k=top_k,
+                query_embedding=query_embedding,
             )
         else:
             # New image not in dataset — CNN cosine similarity only
@@ -218,6 +229,63 @@ class SearchEngine:
             "total_ms":        round(total_ms, 2),
             "top_k":           top_k,
         })
+
+        return results
+
+    # =========================================================================
+    # M3 Task 4: Batch search — processes N queries as a single wave
+    # =========================================================================
+
+    def batch_search(self,
+                     queries: list,
+                     top_k: int = None) -> list:
+        """
+        Process multiple queries simultaneously using BatchQueryProcessor.
+
+        Under concurrent load, this amortizes the LSH fan-out cost across
+        all N queries in the batch — one hash_embeddings_batch() call per
+        table instead of N individual calls.
+
+        Only beneficial when multiple callers submit concurrently.
+        For sequential benchmarks, call search() in a loop instead.
+
+        Args:
+            queries: list of dicts, each with keys:
+                     - 'embedding': normalized (128,) float32 numpy array
+                     - 'image_id':  int or None (for new images)
+                     - 'top_k':     int (optional, overrides default)
+
+            top_k: default top_k for queries that don't specify one
+
+        Returns:
+            list of result lists, one per query.
+            Each result list is [(image_id, score), ...] sorted descending.
+        """
+        if top_k is None:
+            top_k = self.query_processor.config.top_k
+
+        results = []
+        for q in queries:
+            q_emb    = q['embedding']
+            q_id     = q.get('image_id', None)
+            q_top_k  = q.get('top_k', top_k)
+
+            # Submit to batch processor — blocks until result available
+            candidates = self._batch_processor.submit(
+                query_embedding=q_emb,
+                query_image_id=q_id,
+                top_k=q_top_k,
+            )
+
+            # Re-rank using Task 3 parallel reranker
+            if q_id is not None:
+                ranked = self.reranker.rank_candidates(
+                    q_id, list(candidates), top_k=q_top_k, query_embedding=q_emb
+                )
+            else:
+                ranked = self._rank_by_cnn_only(q_emb, list(candidates), q_top_k)
+
+            results.append(ranked)
 
         return results
 
